@@ -1,0 +1,28 @@
+{
+  "name": "own",
+  "version": "0.0.0",
+  "author": "Christopher Cliff <ctcliff@gmail.com>",
+  "description": "A utility for creating own properties objects.",
+  "keywords": [
+    "own",
+    "properties"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "mocha": "1.11.0",
+    "should": "1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/christophercliff/own"
+  },
+  "bugs": {
+    "url": "https://github.com/christophercliff/own/issues"
+  }
+}
