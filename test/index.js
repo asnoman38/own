@@ -5,10 +5,10 @@ describe('own', function(){
     
     it('should create an own properties object', function(){
         own({
-            foo: 'foo'
+            foo: 'bar'
         }).should.eql({
             foo: {
-                value: 'foo',
+                value: 'bar',
                 enumerable: true
             }
         });
