@@ -1,6 +1,6 @@
 {
   "name": "own",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
   "description": "A utility for creating own properties objects.",
   "keywords": [
@@ -11,9 +11,7 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
     "mocha": "1.11.0",
     "should": "1.2.2"
