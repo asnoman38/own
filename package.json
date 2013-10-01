@@ -1,6 +1,6 @@
 {
   "name": "own",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
   "description": "Creates an enumerable and writable `propertiesObject` from an object literal",
   "keywords": [
