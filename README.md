@@ -23,6 +23,13 @@ function create(options) {
 }
 ```
 
+Create readonly objects as well:
+
+```
+var readonlyObject = own.readonly({ foo: 'foo' })
+readonlyObject.foo.writable // false
+```
+
 ## Tests
 
 Install the dependencies and run:
