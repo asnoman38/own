@@ -25,9 +25,15 @@ function create(options) {
 Create readonly objects as well:
 
 ```js
-var readonlyObject = own.readonly({ foo: 'foo' })
+var yourObj = Object.create(YOUR_PROTOTYPE, own.readonly({ foo: 'foo' }))
 
-readonlyObject.foo.writable // false
+Object.getOwnPropertyDescriptor(yourObj, 'foo')
+// {
+//     value: 'foo',
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+// }
 ```
 
 ## Tests
