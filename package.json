@@ -2,7 +2,7 @@
   "name": "own",
   "version": "0.0.2",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
-  "description": "A utility for creating own properties objects.",
+  "description": "Creates an enumerable and writable `propertiesObject` from an object literal",
   "keywords": [
     "own",
     "properties"

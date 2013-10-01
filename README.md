@@ -1,6 +1,6 @@
 # Own
 
-A utility for creating own properties objects.
+Creates an enumerable and writable `propertiesObject` from an object literal. The object corresponds to the second argument of [`Object.defineProperties`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties).
 
 [![Build Status](https://secure.travis-ci.org/christophercliff/own.png?branch=master)](https://travis-ci.org/christophercliff/own)
 
@@ -13,16 +13,20 @@ $ npm install own
 ## Usage
 
 ```js
-var own = require('own');
+Use `own` it with [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) to create a simple factory function:
 
-return Object.create(prototypeProperties, own(ownProperties));
+```js
+var own = require('own')
+
+function create(options) {
+    return Object.create(YOUR_PROTOTYPE, own(options))
+}
 ```
 
 ## Tests
 
-Install the dependencies and run.
+Install the dependencies and run:
 
 ```
-$ npm install
 $ npm test
 ```
