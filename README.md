@@ -12,8 +12,7 @@ $ npm install own
 
 ## Usage
 
-```js
-Use `own` it with [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) to create a simple factory function:
+Use `own` with [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) to create a simple factory function:
 
 ```js
 var own = require('own')
@@ -25,8 +24,9 @@ function create(options) {
 
 Create readonly objects as well:
 
-```
+```js
 var readonlyObject = own.readonly({ foo: 'foo' })
+
 readonlyObject.foo.writable // false
 ```
 
@@ -37,3 +37,7 @@ Install the dependencies and run:
 ```
 $ npm test
 ```
+
+## License
+
+MIT License, see [LICENSE](https://github.com/christophercliff/own/blob/master/LICENSE.md) for details.
