@@ -1,6 +1,8 @@
 # Own
 
-Creates an enumerable and writable `propertiesObject` from an object literal. The object corresponds to the second argument of [`Object.defineProperties`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties).
+## Simple `propertiesObject` creation for use with `Object.create()`
+
+The [`propertiesObject`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) is painfully verbose. `own` is a helper function that makes it easy to create enumerable and writable `propertiesObject`s from an object literal.
 
 [![Build Status](https://secure.travis-ci.org/christophercliff/own.png?branch=master)](https://travis-ci.org/christophercliff/own)
 
@@ -12,28 +14,14 @@ $ npm install own
 
 ## Usage
 
-Use `own` with [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) to create a simple factory function:
+Use the result of `own()` as the second parameter in [`Object.create()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create):
 
 ```js
 var own = require('own')
+var yourObject = Object.create(YOUR_PROTOTYPE, own({ hello: 'world' }))
 
-function create(options) {
-    return Object.create(YOUR_PROTOTYPE, own(options))
-}
-```
-
-Create readonly objects as well:
-
-```js
-var yourObj = Object.create(YOUR_PROTOTYPE, own.readonly({ foo: 'foo' }))
-
-Object.getOwnPropertyDescriptor(yourObj, 'foo')
-// {
-//     value: 'foo',
-//     writable: false,
-//     enumerable: true,
-//     configurable: false
-// }
+yourObject.hasOwnProperty('hello') // true
+yourObject.hello // 'world'
 ```
 
 ## Tests

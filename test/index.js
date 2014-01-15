@@ -1,33 +1,39 @@
 var own = require('../')
 var should = require('should')
 
-var test = Object.create({}, own.readonly({ foo: 'foo' }))
-
-console.log(Object.getOwnPropertyDescriptor(test, 'foo'))
-
 describe('own', function(){
 
-    it('should create an enumerable and writable object', function(){
-        own({ foo: 'foo' }).should.eql({
-            foo: {
-                value: 'foo',
-                writable: true,
-                enumerable: true,
-                configurable: true
-            }
+    describe('standard', function(){
+
+        it('should create an enumerable and writable object', function(){
+            own({ foo: 'foo' }).should.eql({
+                foo: {
+                    value: 'foo',
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                }
+            })
         })
-    })
 
-    it('should return null for undefined', function(){
-        should.equal(own(), undefined)
-    })
+        it('should set own properties on object creation', function(){
+            var obj = Object.create({}, own({ hello: 'world' }))
+            obj.hasOwnProperty('hello').should.equal(true)
+            obj.hello.should.equal('world')
+        })
 
-    it('should return null for non-objects', function(){
-        should.equal(own('blerg'), undefined)
-    })
+        it('should return null for undefined', function(){
+            should.equal(own(), undefined)
+        })
 
-    it('should not throw on Object.create when undefined', function(){
-        Object.create({}, own(undefined)).should.be.object
+        it('should return null for non-objects', function(){
+            should.equal(own('blerg'), undefined)
+        })
+
+        it('should not throw on Object.create when undefined', function(){
+            Object.create({}, own(undefined)).should.be.object
+        })
+
     })
 
     describe('readonly', function(){
