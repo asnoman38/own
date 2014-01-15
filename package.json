@@ -1,6 +1,6 @@
 {
   "name": "own",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Christopher Cliff <ctcliff@gmail.com>",
   "description": "Simple `propertiesObject` creation for use with `Object.create()`",
   "keywords": [
